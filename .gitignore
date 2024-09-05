@@ -1,0 +1,10 @@
+node_modules
+
+public/build/*
+!public/build/.gitkeep
+
+workspace/*.backup
+workspace/.config.nodes.json
+workspace/.config.runtime.json
+workspace/.config.users.json
+workspace/flows_cred.json

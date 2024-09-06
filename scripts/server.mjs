@@ -1,6 +1,7 @@
 import RED from 'node-red';
 import express from 'express';
 import http from 'http';
+import path from 'path';
 
 const HOST = '0.0.0.0';
 const PORT = 1880;
@@ -12,7 +13,10 @@ const settings = {
     userDir: WORKSPACE,
     functionGlobalContext: {},
     verbose: false,
-    flowFile: 'flows.json'
+    flowFile: 'flows.json',
+    nodesDir: [
+        path.resolve(WORKSPACE, 'node_modules')
+    ]
 };
 
 const app = express();

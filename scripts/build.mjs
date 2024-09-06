@@ -18,7 +18,7 @@ console.log(`entries:\n${Object.keys(entryPoints).map(name => `- ${name}`).join(
 
 /* Esbuild config */
 const options = {
-    minify: MODE_PRODUCTION,
+    minify: Boolean(MODE_PRODUCTION),
     sourcemap: !MODE_PRODUCTION,
     entryPoints,
     bundle: true,
@@ -56,11 +56,14 @@ const options = {
 };
 
 /* Build */
-esbuild.context(options)
-    .then(ctx => {
-        if(MODE_PRODUCTION) return ctx.dispose();
-        ctx.watch();
-        console.log('Watching...');
-        return ctx;
-    })
-    .catch(() => process.exit());
+if(MODE_PRODUCTION) {
+    await esbuild.build(options);
+} else {
+    esbuild.context(options)
+        .then(ctx => {
+            ctx.watch();
+            console.log('Watching...');
+            return ctx;
+        })
+        .catch(() => process.exit());
+}

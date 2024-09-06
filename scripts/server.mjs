@@ -2,9 +2,12 @@ import RED from 'node-red';
 import express from 'express';
 import http from 'http';
 import path from 'path';
+import * as dotenv from 'dotenv';
 
-const HOST = '0.0.0.0';
-const PORT = 1880;
+dotenv.config();
+
+const HOST = process.env.SERVER_HOST || '0.0.0.0';
+const PORT = Number(process.env.SERVER_PORT || 1880);
 const WORKSPACE = 'workspace';
 
 const settings = {

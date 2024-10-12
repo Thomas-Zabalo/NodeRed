@@ -35,6 +35,17 @@ function Main() {
                     <span>{'Dashboard'}</span>
                 </a>
             </div>
+            <div className="tp-rules">
+                <p>{'Enoncé du TP 1'}</p>
+                <ol>
+                    <li>{'Côté Node.RED récupérer la liste des users.json, la base du code est dans l\'onglet "Treatment" déjà codé.'}</li>
+                    <li>{'Nettoyer les données pour être RGPD compatible et les stocker dans la base de données de Node.RED "flow".'}</li>
+                    <li>{'Côté React, récupérer ces données et les afficher dans une liste d\'éléments.'}</li>
+                    <li>{'Avoir un CRUD : Create Read Update Delete donc pour ajouter/modifier/supprimer des utilisateurs'}</li>
+                    <li>{'Le rendre Design avec Material-UI et des icones (Font-Awesome).'}</li>
+                    <li>{'Utiliser un React-Router pour faire un lien depuis le dashboard.'}</li>
+                </ol>
+            </div>
         </Layout>
     );
 }

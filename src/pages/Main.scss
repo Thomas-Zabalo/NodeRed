@@ -38,3 +38,12 @@
         }
     }
 }
+
+.tp-rules {
+    padding-left: 20px;
+    font-size: 1.2em;
+
+    & > ul, & > ol {
+        padding-left: 20px;
+    }
+}
